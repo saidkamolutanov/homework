@@ -2,23 +2,19 @@ package uz.library.day2.rep1;
 
 public class Main {
     public static void main(String[] args) {
-        Book book1 = new Book("Ali aliyev", "aliyev ali", "b9", 2010);
-
-        System.out.println("==== Initial state ====");
+        Book book1 = new Book("ali aliyev", "aliyev ali", "b9", 2010);
+        System.out.println("=== BOOK INFO ===");
         book1.displayInfo();
 
-        System.out.println("--- Borrow book ---");
-        book1.borrowBook();
-        book1.displayInfo();
-
-        System.out.println("--- Borrow again ---");
+        System.out.println("=== Borrow test ===");
         book1.borrowBook();
 
-        System.out.println("--- Return book ---");
-        book1.returnBook();
+        System.out.println("=== Borrow again ===");
         book1.displayInfo();
 
-        System.out.println("--- Return again ---");
+        System.out.println("=== Return test ===");
         book1.returnBook();
+
+
     }
 }
