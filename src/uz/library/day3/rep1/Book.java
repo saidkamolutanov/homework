@@ -1,4 +1,4 @@
-package uz.library.day2.rep1;
+package uz.library.day3.rep1;
 
 public class Book {
     private String title;
@@ -7,12 +7,12 @@ public class Book {
     private int year;
     private boolean isAvailable;
 
-    public Book (String title, String author, String isbn, int year){
+    public Book(String title, String author, String isbn, int year) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
         this.year = year;
-        this.isAvailable = isAvailable();
+        this.isAvailable = isAvailable;
     }
 
     public String getTitle() {
@@ -27,45 +27,33 @@ public class Book {
         return isbn;
     }
 
+    public int getYear() {
+        return year;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
     public boolean isAvailable() {
         return isAvailable;
     }
 
-    public void setTitle(String title) {
-        if (title != null && title.trim().isEmpty()){
-            this.title = title;
-        }else {
-            System.out.println("Invalid titlr");
-        }
-    }
-
-    public void setAuthor(String author) {
-        if (author != null && author.trim().isEmpty()){
-            this.author = author;
-        }else {
-            System.out.println("Invalid author");
-        }
-    }
-
-    public void setIsbn(String isbn) {
-        if (isbn != null && isbn.trim().isEmpty()){
-            this.isbn = isbn;
-        }else {
-            System.out.println("Invalid isbn");
-        }
-    }
-
-    public void setYear(int year) {
-        if (year > 0){
-            this.year = year;
-        }else {
-            System.out.println("Invalid year");
-        }
-    }
-
     public boolean borrowBook() {
         if (isAvailable){
-            isAvailable = false;
+            isAvailable = true;
             return true;
         }
         System.out.println("Book is already borrowed");
@@ -77,21 +65,27 @@ public class Book {
             isAvailable = true;
             return true;
         }
-        System.out.println("Book is already available");
+        System.out.println("Book is available");
         return false;
     }
 
     public void displayInfo() {
-        System.out.println("____________________________");
         System.out.println("Title: " + title);
         System.out.println("author: " + author);
         System.out.println("isbn: " + isbn);
         System.out.println("year: " + year);
         System.out.println("isAvailable: " + isAvailable);
-        System.out.println("____________________________");
+        System.out.println("___________________________");
     }
 
-    public String getYear() {
-        return isbn;
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", year=" + year +
+                ", isAvailable=" + isAvailable +
+                '}';
     }
 }
